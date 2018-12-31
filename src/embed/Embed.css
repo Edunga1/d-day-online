@@ -1,0 +1,19 @@
+.box-embed {
+  display: flex;
+}
+
+.box-embed .iframe-youtube {
+  display: block;
+}
+
+.box-embed .box-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.box-embed .box-timer .txt-timer {
+  font-size: 2em;
+  width: 75%;
+}
