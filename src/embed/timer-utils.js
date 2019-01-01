@@ -8,7 +8,7 @@ const addZero = n => (n < 10 ? `0${n}` : n);
  * @param {number} n
  * @return {string}
  */
-const toTimerString = n => (n && `${addZero(n)}:`) || '';
+const toTimerString = n => (typeof n === 'number' && `${addZero(Math.max(n, 0))}:`) || '';
 
 /**
  * @param {number} n milliseconds
@@ -18,7 +18,7 @@ const toTimerString = n => (n && `${addZero(n)}:`) || '';
  * 91 => 09
  */
 const toMsString = n => addZero(
-  Math.floor(n / 10),
+  Math.max(Math.floor(n / 10), 0),
 );
 
 export {

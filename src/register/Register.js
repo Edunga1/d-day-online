@@ -39,7 +39,7 @@ export default class Register extends Component {
       this.onYoutubeChange$.pipe(startWith(youtube)),
     ).pipe(
       map(arr => ({
-        date: new Date(arr[0], arr[1], arr[2]),
+        date: new Date(arr[0], arr[1] - 1, arr[2]),
         youtube: arr[3],
       })),
     ).subscribe(state => onChange({ ...state }));
