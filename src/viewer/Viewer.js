@@ -7,14 +7,17 @@ export default class Viewer extends Component {
     const { youtube, date } = this.props;
     const youtubeId = parseYoutubeId(youtube);
     const time = date && date.getTime();
-    const src = `/embed?t=${time}&v=${youtubeId}`;
+    const src = `embed?t=${time}&v=${youtubeId}`;
     const embedAttrs = {
       src,
       width: 700,
       height: 180,
       frameBorder: 0,
     };
-    const embedSource = `<iframe src="${src}"></iframe>`;
+    const attributes = `width="${embedAttrs.width}" `
+      + `height="${embedAttrs.height}" `
+      + `frameborder="${embedAttrs.frameBorder}"`;
+    const embedSource = `<iframe src="${window.location.href}${src}" ${attributes}></iframe>`;
     return (
       <div>
         <div>

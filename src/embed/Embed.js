@@ -38,7 +38,7 @@ export default class Embed extends Component {
   render() {
     const { location: { search } } = this.props;
     const { v: youtubeId, t: time } = parseQueryString(search);
-    const src = `https://www.youtube.com/embed/${youtubeId}`;
+    const src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
     const { timer = '' } = this.state;
     this.time = time;
     return (
