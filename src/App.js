@@ -4,13 +4,15 @@ import './App.css';
 import Home from './home/Home';
 import Embed from './embed/Embed';
 
+const BASE_URL = process.env.PUBLIC_URL;
+
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={Home} />
-          <Route path="/embed" component={Embed} />
+          <Route exact path={`${BASE_URL}/`} component={Home} />
+          <Route path={`${BASE_URL}/embed`} component={Embed} />
         </div>
       </Router>
     );
