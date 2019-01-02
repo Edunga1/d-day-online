@@ -16,10 +16,10 @@ export default class Home extends Component {
   }
 
   render() {
-    const { youtube, date } = this.state;
+    const { youtube, date, message } = this.state;
     return (
       <div className="home">
-        <Viewer youtube={youtube} date={date} />
+        <Viewer youtube={youtube} date={date} message={message} />
         <div className="box-register">
           <Register onChange={obj => this.onRegisterChange$.next(obj)} />
         </div>

@@ -37,12 +37,12 @@ export default class Embed extends Component {
 
   render() {
     const { location: { search } } = this.props;
-    const { v: youtubeId, t: time } = parseQueryString(search);
+    const { v: youtubeId, t: time, m: message } = parseQueryString(search);
     const src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
     const { timer = '' } = this.state;
     this.time = time;
     return (
-      <div className="box-embed">
+      <div className="embed">
         <iframe
           title="embed youtube"
           className="iframe-youtube"
@@ -53,7 +53,8 @@ export default class Embed extends Component {
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
-        <div className="box-timer">
+        <div className="wrap-timer">
+          <span>{decodeURI(message)}</span>
           <span className="txt-timer">{timer}</span>
         </div>
       </div>

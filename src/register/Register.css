@@ -1,3 +1,15 @@
+.register {
+  display: flex;
+  flex-direction: column;
+}
+
+.register .inp {
+  border: 0;
+  border-bottom: 1px solid #2793e6;
+  background: #f1f1f1;
+  padding: .2em;
+}
+
 .register .inp-youtube {
   min-width: 280px;
 }

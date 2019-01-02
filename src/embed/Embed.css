@@ -1,19 +1,20 @@
-.box-embed {
+.embed {
   display: flex;
 }
 
-.box-embed .iframe-youtube {
+.embed .iframe-youtube {
   display: block;
 }
 
-.box-embed .box-timer {
+.embed .wrap-timer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
 }
 
-.box-embed .box-timer .txt-timer {
+.embed .wrap-timer .txt-timer {
   font-family: 'Orbitron', sans-serif;
   font-size: 2em;
   width: 75%;

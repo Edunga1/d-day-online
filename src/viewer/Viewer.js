@@ -18,12 +18,13 @@ export default class Viewer extends Component {
   }
 
   render() {
-    const { youtube, date } = this.props;
+    const { youtube, date, message } = this.props;
     const youtubeId = parseYoutubeId(youtube);
     const time = date && date.getTime();
-    const src = `embed?t=${time}&v=${youtubeId}`;
+    const messageEncoded = encodeURI(message);
+    const queryString = `embed?t=${time}&v=${youtubeId}&m=${messageEncoded}`;
     const embedAttrs = {
-      src,
+      src: queryString,
       width: 700,
       height: 180,
       frameBorder: 0,
@@ -31,7 +32,7 @@ export default class Viewer extends Component {
     const attributes = `width="${embedAttrs.width}" `
       + `height="${embedAttrs.height}" `
       + `frameborder="${embedAttrs.frameBorder}"`;
-    const embedSource = `<iframe src="${window.location.href}${src}" ${attributes}></iframe>`;
+    const embedSource = `<iframe src="${window.location.href}${queryString}" ${attributes}></iframe>`;
     return (
       <div>
         <iframe
