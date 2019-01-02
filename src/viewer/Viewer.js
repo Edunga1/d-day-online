@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import parseYoutubeId from './parse-youtube-id';
+import './Viewer.css';
 
 export default class Viewer extends Component {
+  constructor() {
+    super();
+    this.refAutogrowBox = null;
+    this.setAutogrowBoxRef = (e) => {
+      this.refAutogrowBox = e;
+    };
+    this.selectAndCopyAutogrow = () => {
+      if (!this.refAutogrowBox) return;
+      this.refAutogrowBox.select();
+      document.execCommand('copy');
+    };
+  }
+
   render() {
     const { youtube, date } = this.props;
     const youtubeId = parseYoutubeId(youtube);
@@ -20,18 +34,24 @@ export default class Viewer extends Component {
     const embedSource = `<iframe src="${window.location.href}${src}" ${attributes}></iframe>`;
     return (
       <div>
-        <div>
-          <iframe
-            title="embed"
-            {...embedAttrs}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
+        <iframe
+          title="embed"
+          {...embedAttrs}
+        />
+        <div className="box-autogrow">
+          <textarea
+            className="inp-autogrow"
+            ref={this.setAutogrowBoxRef}
             value={embedSource}
             readOnly
           />
+          <button
+            className="btn-copy"
+            type="button"
+            onClick={this.selectAndCopyAutogrow}
+          >
+            COPY
+          </button>
         </div>
       </div>
     );
