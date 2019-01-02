@@ -17,7 +17,7 @@
     "build": "react-scripts build && cp build/index.html build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "./deploy-to-github.sh"
+    "deploy": "npm run build && ./deploy-to-github.sh"
   },
   "browserslist": [
     ">0.2%",
