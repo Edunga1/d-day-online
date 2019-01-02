@@ -2,7 +2,7 @@
   "name": "d-day-online",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://edunga1.github.io/d-day-online",
+  "homepage": "https://edunga1.github.io/d-day-online",
   "dependencies": {
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",
@@ -14,9 +14,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp build/index.html build/404.html",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "./deploy-to-github.sh"
   },
   "browserslist": [
     ">0.2%",
