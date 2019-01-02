@@ -54,7 +54,7 @@ export default class Embed extends Component {
           allowFullScreen
         />
         <div className="wrap-timer">
-          <span>{decodeURI(message)}</span>
+          <span>{decodeURI(message || '')}</span>
           <span className="txt-timer">{timer}</span>
         </div>
       </div>
