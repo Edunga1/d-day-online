@@ -19,8 +19,10 @@ export default class Home extends Component {
     const { youtube, date } = this.state;
     return (
       <div className="home">
-        <Register onChange={obj => this.onRegisterChange$.next(obj)} />
         <Viewer youtube={youtube} date={date} />
+        <div className="box-register">
+          <Register onChange={obj => this.onRegisterChange$.next(obj)} />
+        </div>
       </div>
     );
   }

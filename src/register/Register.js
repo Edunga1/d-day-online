@@ -61,7 +61,7 @@ export default class Register extends Component {
     const onMonthChange = e => this.onMonthChange$.next(e.target.value);
     const onDayChange = e => this.onDayChange$.next(e.target.value);
     return (
-      <div className="box-register">
+      <div className="register">
         <div>
           <input
             className="inp-youtube"
