@@ -2,6 +2,7 @@
   "name": "d-day-online",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://edunga1.github.io/d-day-online",
   "dependencies": {
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",
