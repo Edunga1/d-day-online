@@ -19,3 +19,13 @@
   font-size: 2em;
   width: 75%;
 }
+
+.embed .link-site {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  color: #c2c2c2;
+  font-size: .5em;
+  font-weight: bold;
+  text-decoration: none;
+}

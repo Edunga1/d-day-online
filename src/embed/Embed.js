@@ -40,6 +40,7 @@ export default class Embed extends Component {
     const { v: youtubeId, t: time, m: message } = parseQueryString(search);
     const src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
     const { timer = '' } = this.state;
+    const siteUrl = `${window.location.origin}${process.env.PUBLIC_URL}`;
     this.time = time;
     return (
       <div className="embed">
@@ -57,6 +58,14 @@ export default class Embed extends Component {
           <span>{decodeURI(message || '')}</span>
           <span className="txt-timer">{timer}</span>
         </div>
+        <a
+          className="link-site"
+          href={siteUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {siteUrl}
+        </a>
       </div>
     );
   }
