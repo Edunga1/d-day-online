@@ -2,7 +2,7 @@
 
 iframe-based, d-day timer.
 
-[https://github.com/Edunga1/d-day-online](https://github.com/Edunga1/d-day-online)
+[https://edunga1.github.io/d-day-online](https://edunga1.github.io/d-day-online)
 
 You can adjust the youtube link and date on the main page. like below:
 
